@@ -13,7 +13,7 @@ Future<void> init() async {
 }
 
 void _couldntFindATool(List<String> allTools) {
-    print("\nCouldn't find a tool to run.\n\nAvailable tools: ${allTools.isNotEmpty ? allTools.join(",") : "None"}\n\nRun `dev help <tool>` to get help for a tool.");
+    print("\nCouldn't find a tool to run. Run `dev <tool>` to run a tool.\n\nAvailable tools: ${allTools.isNotEmpty ? allTools.join(",") : "None"}\n\nRun `dev help <tool>` to get help for a tool.");
 }
 
 void run(List<String> args, List<Tool> tools) async {
@@ -25,8 +25,10 @@ void run(List<String> args, List<Tool> tools) async {
         if (args.isNotEmpty) {
             if (args[0].toLowerCase() == element.cmd.toLowerCase()) {
                 toolToRun = element;
-            } else if (args[1].toLowerCase() == element.cmd.toLowerCase()) {
-                helpTool = element;
+            } else if (args.length > 1) {
+                if (args[1].toLowerCase() == element.cmd.toLowerCase()) {
+                    helpTool = element;
+                }
             }
         } else {
             allTools.add(element.cmd);
