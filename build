@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -v ./bin/dev || true
+dart compile exe ./bin/dev.dart -o ./bin/dev
