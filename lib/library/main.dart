@@ -30,9 +30,9 @@ void run(List<String> args, List<Tool> tools) async {
                     helpTool = element;
                 }
             }
-        } else {
-            allTools.add(element.cmd);
         }
+
+        allTools.add(element.cmd);
     }
 
     if (toolToRun != null) {
