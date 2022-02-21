@@ -38,8 +38,9 @@ cd dev
 
 ## Creating a tool
 
-I recommend checking out [lib/tools/gitignore.dart](lib/tools/gitignore.dart) as it's a simple tool and you can use it
-as something to build off of and start with.
+I recommend checking out [lib/tools/gitignore.dart](lib/tools/gitignore.dart) and
+[lib/tools/rebuild.dart](lib/tools/rebuild.dart) as they are both very simple and you can use them as something to build
+off of.
 
 After creating a tool you will have to include it in [bin/dev.dart](bin/dev.dart) like this:
 
@@ -63,5 +64,6 @@ void main(List<String> args) async {
 }
 ```
 
-If done correctly your new tool will be ready to go just like that. Then rebuild dev and it will be included in the
-binary. If you think it's a tool that will benefit anyone else I strongly recommend making a pull request.
+If done correctly your new tool will be ready to go just like that. Then rebuild dev by running `dev rebuild` and it
+will be included in the binary. If you think it's a tool that will benefit anyone else I strongly recommend making a
+pull request.

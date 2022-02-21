@@ -13,7 +13,7 @@ Future<void> init() async {
 }
 
 void _couldntFindATool(List<String> allTools) {
-    print("\nCouldn't find a tool to run. Run `dev <tool>` to run a tool.\n\nAvailable tools: ${allTools.isNotEmpty ? allTools.join(",") : "None"}\n\nRun `dev help <tool>` to get help for a tool.");
+    print("\nCouldn't find a tool to run. Run `dev <tool>` to run a tool.\n\nAvailable tools: ${allTools.isNotEmpty ? allTools.join(", ") : "None"}\n\nRun `dev help <tool>` to get help for a tool.");
 }
 
 void run(List<String> args, List<Tool> tools) async {

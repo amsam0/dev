@@ -12,7 +12,7 @@ File get configFile => File(p.join(_homeDirPath, "dev.config"));
 String disclaimer = "### This is the configuration file used by dev. Only modify values or things may break.";
 
 class _Config {
-    Map<String, Map<String, dynamic>> _data = {};
+    final Map<String, Map<String, dynamic>> _data = {};
 
     _Config();
 
@@ -20,9 +20,9 @@ class _Config {
         String data = disclaimer + "";
 
         _data.forEach((key, value) {
-            data += "\n\n# $key\n";
+            data += "\n\n# $key";
             value.forEach((key, value) {
-                data += "$key=$value";
+                data += "\n$key=$value";
             });
         });
 
@@ -42,7 +42,7 @@ class _Config {
 
             if (element.startsWith("#")) {
                 currentSection = element.replaceFirst("# ", "");
-                sections.update(currentSection, (dynamic) => {}, ifAbsent: () => {});
+                sections.update(currentSection, (dynamic) => sections[currentSection]!, ifAbsent: () => {});
             } else {
                 var data = element.split("=");
 
