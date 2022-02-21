@@ -46,6 +46,8 @@ void run(List<String> args, List<Tool> tools) async {
                 } else {
                     _couldntFindATool(allTools);
                 }
+            } else {
+                _couldntFindATool(allTools);
             }
         } else {
             _couldntFindATool(allTools);
